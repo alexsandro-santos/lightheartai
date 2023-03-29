@@ -90,4 +90,4 @@ if exec_button:
         result = 'risco médio'
     else:
         result = 'risco alto'
-    st.write(f'Foi detectado um **{result}** do paciente estar com a Doença Arterial Coronariana.')
+    st.write(f'Foi detectado um **{result}** do paciente estar com a Doença Arterial Coronariana. P = {prob[0, 1]}')
