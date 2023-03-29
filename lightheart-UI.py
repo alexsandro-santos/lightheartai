@@ -1,8 +1,13 @@
 import streamlit as st
-import numpy as np
+
+st.set_page_config(
+     page_title="Light Heart AI",
+     page_icon="icon_lightheart.png",
+     layout="wide",
+ )
 
 # header
-_, logo_limit, _ = st.columns([0.5,5,1])
+# _, logo_limit, _ = st.columns([0.5,5,1])
 head = st.container()
 # subheaders
 # subh1, subh2 = st.columns([2,1])
@@ -11,7 +16,7 @@ col1, col2 = st.columns([2,1], gap='large')
 
 c1, c2 = st.columns([2,1], gap='large')
 
-logo_limit.image('logo_lightheart.png', use_column_width='always')
+head.image('logo_lightheart.png')
 head.title('Diagnóstico da Doença Arterial Coronariana')
 
 sex = ['Selecione o sexo do paciente', 'Masculino', 'Feminino']
