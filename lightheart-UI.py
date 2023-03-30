@@ -82,12 +82,12 @@ scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 X = np.array([age, map_sex[sex], map_cp[cp], trestbps, chol, map_fbs[fbs], map_restecg[restecg], thalach, exang, oldpeak, map_slope[slope], ca, thal]) 
 
-X = scaler.transform(X)
+X = scaler.transform(X.reshape(-1,1).T)
 
 if exec_button:
     st.subheader('Resultado')
     st.write(f'Nome do paciente: **{name}**')
-    prob = model.predict_proba(X.reshape(-1,1).T)
+    prob = model.predict_proba(X)
     if prob[0, 1] <= 0.5:
         result = 'risco baixo'
     elif prob[0, 1] <= 0.75:
