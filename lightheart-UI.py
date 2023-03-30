@@ -65,7 +65,7 @@ rest_cg_values = [0,1,2]
 fbs_values = [1,0]
 slope_values = [1,3,2] 
 cp_values = [1,2,3,4]
-sex_values = ['', 1, 0]
+sex_values = [2, 1, 0]
 
 map_sex = {chave:valor for chave, valor in zip(sex_opt,sex_values)}
 map_restecg = {chave:valor for chave, valor in zip(ecg_result,rest_cg_values)}
