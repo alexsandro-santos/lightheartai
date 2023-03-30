@@ -16,6 +16,8 @@ head = st.container()
 # input data
 col1, col2 = st.columns([2,1], gap='large')
 
+middle = st.container()
+
 c1, c2 = st.columns([2,1], gap='large')
 
 _, button_position, _ = st.columns(3)
@@ -38,8 +40,7 @@ with st.container():
     col2.header('Sintomas')
     cp = col2.radio('Dor no peito', cp_types, index=len(cp_types)-1)
 
-with st.container():
-    col1.header('Exames')
+middle.header('Exames')
 
 bld_sugar = ['Maior ou igual 120 mg/dL', 'Menor que 120 mg/dL']
 ecg_result = ['Normal', 'Anomalias ST-T', 'Sinais de HVE']
@@ -94,4 +95,4 @@ if exec_button:
         result = 'risco médio'
     else:
         result = 'risco alto'
-    st.write(f'Foi detectado um **{result}** do paciente estar com a Doença Arterial Coronariana. P = {prob[0, 1]}')
+    st.write(f'Foi detectado um **{result}** do paciente estar com a Doença Arterial Coronariana.')
