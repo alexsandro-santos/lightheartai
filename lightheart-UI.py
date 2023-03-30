@@ -78,7 +78,11 @@ trained_model = open('model.pkl', 'rb')
 
 model = pickle.load(trained_model)
 
+scaler = pickle.load(open('scaler.pkl', 'rb'))
+
 X = np.array([age, map_sex[sex], map_cp[cp], trestbps, chol, map_fbs[fbs], map_restecg[restecg], thalach, exang, oldpeak, map_slope[slope], ca, thal]) 
+
+X = scaler.transform(X)
 
 if exec_button:
     st.subheader('Resultado')
